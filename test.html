@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cl1p API Test</title>
+</head>
+<body>
+    <h1>Cl1p API Test</h1>
+    <pre id="result"></pre>
+    <script>
+        // Test the API directly
+        async function testApi() {
+            const clipId = 'test' + Math.random().toString(36).substring(7);
+            const url = `https://api.cl1p.net/${clipId}`;
+            const result = document.getElementById('result');
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                        'cl1papitoken': 'pyF1A4IevVb9VXCAfhmqIaHZIdZ5nasw'
+                    },
+                    body: 'Test content'
+                });
+                
+                result.textContent = `Status: ${response.status}\nHeaders: ${JSON.stringify([...response.headers], null, 2)}`;
+            } catch (error) {
+                result.textContent = `Error: ${error.message}\nType: ${error.name}`;
+            }
+        }
+        
+        testApi();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cl1p Creator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-link"></i> Create a Cl1p</h1>
+        <div class="input-container">
+            <textarea id="clipContent" placeholder="Enter your text here... Your content will be securely shared and automatically destroyed after viewing."></textarea>
+            <button id="createClip" onclick="createClip()">
+                <i class="fas fa-paper-plane"></i>
+                Create Secure Clip
+            </button>
+        </div>
+        <div id="result" class="result-container hidden">
+            <h2><i class="fas fa-check-circle"></i> Clip Created Successfully</h2>
+            <div class="link-container">
+                <input type="text" id="clipLink" readonly>
+                <button onclick="copyLink()">
+                    <i class="fas fa-copy"></i>
+                    Copy Link
+                </button>
+            </div>
+            <p class="warning">
+                <i class="fas fa-shield-alt"></i>
+                This clip is secure and will self-destruct after being viewed once
+            </p>
+        </div>
+        <div id="error" class="error-container hidden">
+            <p></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
